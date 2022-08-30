@@ -14,10 +14,15 @@ function onFormSubmit(e){
 //Retrieve the data
 function readFormData(){
     var formData = {};
-    formData["productCode"] = document.getElementById("productCode").value;
-    formData["product"] = document.getElementById("product").value;
-    formData["qty"] = document.getElementById("qty").value;
-    formData["perPrice"] = document.getElementById("perPrice").value;
+    formData["Onyx"] = document.getElementById("Onyx").value;
+    formData["Gunther"] = document.getElementById("Gunther").value;
+    formData["Andrasta"] = document.getElementById("Andrasta").value;
+    formData["Varren"] = document.getElementById("Varren").value;
+    formData["Phelles"] = document.getElementById("Phelles").value;
+    formData["Zhuo"] = document.getElementById("Zhuo").value;
+    formData["Salvador"] = document.getElementById("Salvador").value;
+    formData["Cadfael"] = document.getElementById("Cadfael").value;
+
     return formData;
 }
 
@@ -34,23 +39,41 @@ function insertNewRecord(data){
     var cell4 = newRow.insertCell(3);
         cell4.innerHTML = data.perPrice;
     var cell5 = newRow.insertCell(4);
-        cell5.innerHTML = `<button onClick='onEdit(this)'>Edit</button> <button onClick='onDelete(this)'>Delete</button>`;
+        cell5.innerHTML = data.perPrice;
+    var cell6 = newRow.insertCell(5);
+        cell6.innerHTML = data.perPrice;
+    var cell7 = newRow.insertCell(6);
+        cell7.innerHTML = data.perPrice;
+    var cell8 = newRow.insertCell(7);
+        cell8.innerHTML = data.perPrice;
+    var cell9 = newRow.insertCell(8);
+        cell9.innerHTML = `<button onClick='onEdit(this)'>Edit</button> <button onClick='onDelete(this)'>Delete</button>`;
 }
 
 //Edit data
 function onEdit(td){
     selectedRow=td.parentElement.parentElement;
-    document.getElementById('productCode').value = selectedRow.cells[0].innerHTML;
-    document.getElementById('product').value = selectedRow.cells[1].innerHTML;
-    document.getElementById('qty').value = selectedRow.cells[2].innerHTML;
-    document.getElementById('perPrice').value = selectedRow.cells[3].innerHTML;
+    document.getElementById('Onyx').value = selectedRow.cells[0].innerHTML;
+    document.getElementById('Gunther').value = selectedRow.cells[1].innerHTML;
+    document.getElementById('Andrasta').value = selectedRow.cells[2].innerHTML;
+    document.getElementById('Varren').value = selectedRow.cells[3].innerHTML;
+    document.getElementById('Phelles').value = selectedRow.cells[4].innerHTML;
+    document.getElementById('Zhuo').value = selectedRow.cells[5].innerHTML;
+    document.getElementById('Salvador').value = selectedRow.cells[6].innerHTML;
+    document.getElementById('Cadfael').value = selectedRow.cells[7].innerHTML;
+
 }
 
+
 function updateRecord(formData){
-    selectedRow.cells[0].innerHTML = formData.productCode;
-    selectedRow.cells[1].innerHTML = formData.product;
-    selectedRow.cells[2].innerHTML = formData.qty;
-    selectedRow.cells[3].innerHTML = formData.perPrice;
+    selectedRow.cells[0].innerHTML = formData.Onyx;
+    selectedRow.cells[1].innerHTML = formData.Gunther;
+    selectedRow.cells[2].innerHTML = formData.Andrasta;
+    selectedRow.cells[3].innerHTML = formData.Varren;
+    selectedRow.cells[4].innerHTML = formData.Phelles;
+    selectedRow.cells[5].innerHTML = formData.Zhuo;
+    selectedRow.cells[6].innerHTML = formData.Salvador;
+    selectedRow.cells[7].innerHTML = formData.Cadfael;
 
 }
 
@@ -65,8 +88,13 @@ function onDelete(td){
 
 //Reset the data
 function resetForm(){
-    document.getElementById('productCode').value = '';
-    document.getElementById('product').value = '';
-    document.getElementById('qty').value = '';
-    document.getElementById('perPrice').value = '';
+    document.getElementById('Onyx').value = '';
+    document.getElementById('Gunther').value = '';
+    document.getElementById('Andrasta').value = '';
+    document.getElementById('Varren').value = '';
+    document.getElementById('Phelles').value = '';
+    document.getElementById('Zhuo').value = '';
+    document.getElementById('Salvador').value = '';
+    document.getElementById('Cadfael').value = '';
+
 }
